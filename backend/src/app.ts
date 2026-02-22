@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import winston from 'winston';
 import authRoutes from './routes/auth';
-import { authMiddleware } from './middleware/authMiddleware';
+import empresasRoutes from './routes/empresas';
 
 dotenv.config();
 
@@ -43,14 +43,8 @@ app.get('/api/health', (req: Request, res: Response) => {
 // Authentication routes (public)
 app.use('/auth', authRoutes);
 
-// Protected endpoints (require JWT)
-app.get('/api/empresas', authMiddleware, (req: Request, res: Response) => {
-  // This endpoint requires valid JWT
-  res.json({
-    message: 'Empresas endpoint (protected)',
-    user: req.user,
-  });
-});
+// Empresa routes (protected with JWT middleware)
+app.use('/api/empresas', empresasRoutes);
 
 // Error handler middleware
 app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
