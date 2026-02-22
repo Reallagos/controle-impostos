@@ -5,8 +5,8 @@ export interface AuditoriaRecord {
   acao: 'INSERT' | 'UPDATE' | 'DELETE';
   empresaId: number | null;
   registroId: number | null;
-  dadosAntes: Record<string, any> | null;
-  dadosDepois: Record<string, any> | null;
+  dadosAntes: Record<string, unknown> | null;
+  dadosDepois: Record<string, unknown> | null;
   timestamp: Date;
 }
 
@@ -16,6 +16,6 @@ export interface CreateAuditoriaInput {
   acao: 'INSERT' | 'UPDATE' | 'DELETE';
   empresaId?: number | null;
   registroId?: number | null;
-  dadosAntes?: Record<string, any> | null;
-  dadosDepois?: Record<string, any> | null;
+  dadosAntes?: Record<string, unknown> | null;
+  dadosDepois?: Record<string, unknown> | null;
 }

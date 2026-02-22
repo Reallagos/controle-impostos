@@ -2,6 +2,8 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import winston from 'winston';
+import authRoutes from './routes/auth';
+import { authMiddleware } from './middleware/authMiddleware';
 
 dotenv.config();
 
@@ -29,12 +31,24 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-// Health check endpoint
+// Public endpoints
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
+  });
+});
+
+// Authentication routes (public)
+app.use('/auth', authRoutes);
+
+// Protected endpoints (require JWT)
+app.get('/api/empresas', authMiddleware, (req: Request, res: Response) => {
+  // This endpoint requires valid JWT
+  res.json({
+    message: 'Empresas endpoint (protected)',
+    user: req.user,
   });
 });
 

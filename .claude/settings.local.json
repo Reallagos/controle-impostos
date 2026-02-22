@@ -7,7 +7,15 @@
       "Bash(tail:*)",
       "Bash(cd /c/Users/User/controle-impostos/frontend && npm run typecheck 2>&1)",
       "Bash(cd /c/Users/User/controle-impostos/backend && npm run lint 2>&1)",
-      "Bash(cd /c/Users/User/controle-impostos/frontend && npm run lint 2>&1)"
+      "Bash(cd /c/Users/User/controle-impostos/frontend && npm run lint 2>&1)",
+      "Bash(test -f backend/migrations/001_create_initial_schema.sql)",
+      "Bash(test -f backend/src/models/User.ts -a -f backend/src/models/Empresa.ts -a -f backend/src/models/Imposto.ts)",
+      "Bash(test -f backend/tests/schema.test.ts)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(echo Instalação Linux falhou, tentando Windows...:*)",
+      "Bash(cd /c/Users/User/controle-impostos && git push -u origin master 2>&1)"
     ]
   },
   "hooks": {
