@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(cd /c/Users/User/controle-impostos/frontend && npm run typecheck 2>&1)",
+      "Bash(cd /c/Users/User/controle-impostos/backend && npm run lint 2>&1)",
+      "Bash(cd /c/Users/User/controle-impostos/frontend && npm run lint 2>&1)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \".claude/hooks/synapse-engine.js\""
+          }
+        ]
+      }
+    ]
+  }
+}

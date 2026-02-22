@@ -1,0 +1,45 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+code {
+  background-color: #1e1e1e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+h1 {
+  color: #61dafb;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+small {
+  color: #aaa;
+}
